@@ -30,3 +30,7 @@ jobs:
 
       - name: Run Test
         run: mvn --batch-mode test
+
+        env:
+          DISPLAY: :19
+          CUCUMBER_PUBLISH_TOKEN: ab5bc1af-c57a-4025-9062-b25919e98722

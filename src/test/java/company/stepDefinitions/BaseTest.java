@@ -24,7 +24,7 @@ public class BaseTest {
         Properties properties = new Properties();
 
         FileReader fileReader = new FileReader(System.getProperty("user.dir") +
-                "//src//main//java//company//resources//GlobalData.properties");
+                "//src//test//java//company//resources//GlobalData.properties");
 
         properties.load(fileReader);
 
