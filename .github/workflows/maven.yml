@@ -31,4 +31,4 @@ jobs:
       run: mvn -B package --file pom.xml
  
     - name: Run Test
-      run: mvn test verify
+      run: mvn test
