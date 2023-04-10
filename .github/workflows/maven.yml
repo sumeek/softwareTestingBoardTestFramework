@@ -28,6 +28,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+        permissions: read-all|write-all
+
       - name: Build
         run: mvn --batch-mode -DskipTests package
 
@@ -46,5 +48,4 @@ jobs:
          path: target/surefire-reports/*.xml
          reporter: java-junit
          fail-on-error: true
-         permissions:
-           checks: write
+
