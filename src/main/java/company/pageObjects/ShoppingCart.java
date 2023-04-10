@@ -1,9 +1,11 @@
 package company.pageObjects;
 
 import company.abstractComponent.AbstractComponent;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ShoppingCart extends AbstractComponent {
 
@@ -37,11 +39,6 @@ public class ShoppingCart extends AbstractComponent {
 
     }
 
-    public void updateDeletetItem() {
-
-        // Not implemented
-    }
-
     public void updateQuantity(String updatedQuantiy)  {
 
         openCart();
@@ -69,6 +66,20 @@ public class ShoppingCart extends AbstractComponent {
 
     }
 
+    public void updateDeletetItem() {
+
+        // Not implemented
+    }
+
+    public String viewCartAmount(){
+
+        openCart();
+
+        return driver.findElement(By.cssSelector(".subtotal .price")).getText().split("\\$")[1];
+
+    }
+
+
     public CheckOutPage proceedToCheckout()  {
 
         openCart();
@@ -87,7 +98,7 @@ public class ShoppingCart extends AbstractComponent {
 
         openCart();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".action.viewcart")));
+        waitTillPresenceOfElementLocated(By.cssSelector(".action.viewcart"));
 
         driver.findElement(By.cssSelector(".action.viewcart")).click();
 
@@ -97,11 +108,4 @@ public class ShoppingCart extends AbstractComponent {
 
     }
 
-    public String viewCartAmount(){
-
-        openCart();
-
-        return driver.findElement(By.cssSelector(".subtotal .price")).getText().split("\\$")[1];
-
-    }
 }

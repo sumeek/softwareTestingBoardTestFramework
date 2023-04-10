@@ -55,6 +55,8 @@ public class CheckOutPage extends AbstractComponent {
 
         driver.findElement(By.cssSelector("span[data-bind*='Next']")).click();
 
+        waitForInvisibilityOf(driver.findElement(By.cssSelector(".loading-mask")));
+
         PaymentsPage paymentsPage = new PaymentsPage(driver);
 
         return paymentsPage;

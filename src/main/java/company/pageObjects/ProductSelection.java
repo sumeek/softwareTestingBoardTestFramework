@@ -8,8 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public class ProductSelection extends AbstractComponent {
 
-    String quantiy = "1";
-
     public ProductSelection(WebDriver driver) {
 
         super(driver);
@@ -17,8 +15,6 @@ public class ProductSelection extends AbstractComponent {
     }
 
     public ShoppingCart addProduct(String searchTerm, String sizeLabel, String colorLabel, String quantiyRequired) {
-
-        quantiy = quantiyRequired;
 
         searchProduct(searchTerm);
 
@@ -39,7 +35,7 @@ public class ProductSelection extends AbstractComponent {
 
         WebElement quantityEle = driver.findElement(By.id("qty"));
         quantityEle.clear();
-        quantityEle.sendKeys(quantiy);
+        quantityEle.sendKeys(quantiyRequired);
 
         WebElement addToCart = driver.findElement(By.id("product-addtocart-button"));
 
@@ -50,12 +46,6 @@ public class ProductSelection extends AbstractComponent {
         ShoppingCart shoppingCart = new ShoppingCart(driver);
 
         return shoppingCart;
-
-    }
-
-    public void addProduct(String searchTerm, String quantiyRequired) {
-
-        addProduct(searchTerm, null, null, quantiyRequired);
 
     }
 
