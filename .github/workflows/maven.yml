@@ -28,8 +28,11 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Run Test
-        run: mvn --batch-mode test
+      - name: Build
+        run: mvn --batch-mode -DskipTests package
+
+      - name: Running Test
+        run: mvn --batch-mode  test verify
 
         env:
           DISPLAY: :19
