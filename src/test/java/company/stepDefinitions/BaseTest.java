@@ -34,6 +34,8 @@ public class BaseTest {
 
             ChromeOptions options = new ChromeOptions();
 
+            options.addArguments("--headless");
+
             options.addArguments("--remote-allow-origins=*");
 
             WebDriverManager.chromedriver().setup();
@@ -62,7 +64,7 @@ public class BaseTest {
     }
 
     @After
-    public void takeScraenshotOnFailure(Scenario scenario) {
+    public void takeScreenshotOnFailure(Scenario scenario) {
 
         if (scenario.isFailed()) {
 
