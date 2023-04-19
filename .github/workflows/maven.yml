@@ -37,14 +37,3 @@ jobs:
         env:
           DISPLAY: :19
           CUCUMBER_PUBLISH_TOKEN: ab5bc1af-c57a-4025-9062-b25919e98722
-
-      - name: Report
-        uses: dorny/test-reporter@v1
-        if: always()
-        with:
-         name: Maven Tests
-         path: target/surefire-reports/*.xml
-         reporter: java-junit
-         fail-on-error: true
-         permissions: read-all|write-all
-
