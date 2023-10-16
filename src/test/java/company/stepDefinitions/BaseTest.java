@@ -48,7 +48,7 @@ public class BaseTest {
 
         } else {
 
-            //initialize other browser driver
+            //initialize other browser driver if you want
         }
         return driver;
     }
