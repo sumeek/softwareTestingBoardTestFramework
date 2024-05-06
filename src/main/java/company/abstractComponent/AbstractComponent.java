@@ -18,7 +18,9 @@ public class AbstractComponent {
 
         this.driver = driver;
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        //wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        
     }
 
     public void gotoHomePage() {
